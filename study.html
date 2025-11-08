@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Padhai Checker</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background: white;
+        padding: 30px 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        text-align: center;
+        max-width: 400px;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .yes { background-color: #4CAF50; color: white; }
+    .no { background-color: #f44336; color: white; }
+    button:hover { opacity: 0.8; }
+    .output { margin-top: 20px; font-size: 18px; line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Aaj padhai ki? 📚</h1>
+    <button class="yes" onclick="checkStudy(1)">Yes ✅</button>
+    <button class="no" onclick="checkStudy(0)">No ❌</button>
+
+    <div class="output" id="output"></div>
+</div>
+
+<script>
+function checkStudy(study) {
+    const output = document.getElementById("output");
+    if(study === 1) {
+        output.innerHTML = `
+        ✅ Good job! Future bright 😎<br>
+        🎓 Knowledge +1<br>💪 Confidence +1<br>😌 Stress -1<br>
+        <br>Life hack: Padhai karo warna compiler bhi tumhe error dega 💥
+        `;
+    } else {
+        output.innerHTML = `
+        ❌ Arre yaar... Padhai nahi ki 😭<br>
+        ⚠️ Regret loading...<br>
+        😢 Future me bolega: "Kaash padh leta..."<br>
+        📵 Mobile se dur raho next time!<br>
+        <br>Life hack: Padhai karo warna compiler bhi tumhe error dega 💥
+        `;
+    }
+}
+</script>
+</body>
+</html>
